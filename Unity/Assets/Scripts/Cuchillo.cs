@@ -77,6 +77,7 @@ public class Cuchillo : MonoBehaviour
             if (esAtaqueHaciaAbajo)
             {
                 rb.AddForce(direccion * managerAtaque.fuerzaArriba);
+                rb.velocity = Vector2.ClampMagnitude(rb.velocity, 10f); // Tope de velocidad
             }
             else
             {
