@@ -25,6 +25,7 @@ public class Player : MonoBehaviour
     private bool canDash = true, isDashing;
     private Vector2 dashDirection;
     private TrailRenderer trailRenderer;
+    private float maxVelocity = 35f;
 
     // Start is called before the first frame update
     void Start()
@@ -72,6 +73,11 @@ public class Player : MonoBehaviour
             return; // Sin este return puede hacer dos dash seguidos, si el primer dash lo hace desde una plataforma sin haber saltado
         }
         if (isGrounded()) canDash = true;
+    }
+
+    void FixedUpdate()
+    {
+        rb.velocity = Vector2.ClampMagnitude(rb.velocity, maxVelocity); // Tope de velocidad
     }
 
     void GetInputs()
