@@ -21,7 +21,7 @@ public class Puerta : MonoBehaviour
         if(collision.tag.Equals("key")){
 
             Llave.llave +=1;
-            Destroy(collision.gameObject);
+            Destroy(collision.gameObject); //elimina la llave
         }
     }
     private void OnTriggerStay2D(Collider2D collision){
@@ -51,6 +51,7 @@ public class Puerta : MonoBehaviour
     public void botonabrirP(){
 
         animPuerta.SetTrigger("abrir"); 
+         animPuertab.SetTrigger("abrir"); 
 
     }
    
