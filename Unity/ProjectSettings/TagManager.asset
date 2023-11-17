@@ -3,7 +3,14 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
+<<<<<<< HEAD
   tags: []
+=======
+  tags:
+  - door
+  - key
+  - Enemy
+>>>>>>> fff92c1c2cf9e78a3ddf1aaba3bbd3bc160a0c34
   layers:
   - Default
   - TransparentFX
