@@ -3,19 +3,12 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags:
-  - Enemy
-<<<<<<< HEAD
-  - Dash
-=======
-  - key
-  - door
->>>>>>> a98737ba363b3250d0c2db4369b61b7270d94603
+  tags: []
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - Ground
+  - 
   - Water
   - UI
   - 
