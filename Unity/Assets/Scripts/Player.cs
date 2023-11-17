@@ -26,6 +26,8 @@ public class Player : MonoBehaviour
     private Vector2 dashDirection;
     private TrailRenderer trailRenderer;
     private float maxVelocity = 35f;
+    public bool dashObtenido = false;
+
 
     // Start is called before the first frame update
     void Start()
@@ -33,7 +35,7 @@ public class Player : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         trailRenderer = GetComponent<TrailRenderer>();
         isFacingLeft = false; // Suponiendo que siempre se va a spawnear mirando hacia la derecha
-        facingLeft = new Vector2 (-transform.localScale.x,transform.localScale.y);
+        facingLeft = new Vector2(-transform.localScale.x, transform.localScale.y);
     }
 
     // Update is called once per frame
@@ -44,18 +46,18 @@ public class Player : MonoBehaviour
         Jump();
 
         // GIRAR PERSONAJE
-        if(xAxis > 0 && isFacingLeft)
+        if (xAxis > 0 && isFacingLeft)
         {
             isFacingLeft = false;
             Flip();
         }
-        if(xAxis < 0 && !isFacingLeft)
+        if (xAxis < 0 && !isFacingLeft)
         {
             isFacingLeft = true;
             Flip();
         }
 
-        if (Input.GetButtonDown("Dash") && canDash)
+        if (dashObtenido && Input.GetButtonDown("Dash") && canDash)
         {
             isDashing = true;
             canDash = false;
@@ -143,6 +145,5 @@ public class Player : MonoBehaviour
             transform.localScale = new Vector2(-transform.localScale.x, transform.localScale.y);
         }
     }
-}
 
-// Ejemplo para git add
+}

@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class MenuInicial : MonoBehaviour
 {
-   [SerializeField] private GameObject botonPausa;
+    [SerializeField] private GameObject botonPausa;
     [SerializeField] private GameObject menuPausa;
 
     private bool juegoPause = false;
