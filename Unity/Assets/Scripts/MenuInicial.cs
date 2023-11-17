@@ -10,6 +10,11 @@ public class MenuInicial : MonoBehaviour
 
     private bool juegoPause = false;
 
+    public void jugar(){
+
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+    }
+
     private void Update()
     {
         if (Input.GetKeyDown(KeyCode.Escape))
