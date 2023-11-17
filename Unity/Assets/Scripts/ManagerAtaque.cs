@@ -12,12 +12,12 @@ public class ManagerAtaque : MonoBehaviour
     private bool pulsadoAtaque;
     private Animator meleeAnimator;
     //private Animator anim;
-    private Player player;
+    private LogicaPlayer player;
 
     private void Start()
     {
         //anim = GetComponent<Animator>();
-        player = GetComponent<Player>();
+        player = GetComponent<LogicaPlayer>();
         meleeAnimator = GetComponentInChildren<Cuchillo>().gameObject.GetComponent<Animator>();
     }
 

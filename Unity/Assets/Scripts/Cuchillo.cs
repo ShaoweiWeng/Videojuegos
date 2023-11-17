@@ -8,7 +8,7 @@ using UnityEngine.Scripting.APIUpdating;
 public class Cuchillo : MonoBehaviour
 {
     private int puntosDaño = 20;
-    private Player player;
+    private LogicaPlayer player;
     private Rigidbody2D rb;
     private ManagerAtaque managerAtaque;
     private Vector2 direccion;  //direccion de knockback
@@ -17,7 +17,7 @@ public class Cuchillo : MonoBehaviour
 
     void Start()
     {
-        player = GetComponentInParent<Player>();
+        player = GetComponentInParent<LogicaPlayer>();
         rb = GetComponentInParent<Rigidbody2D>();
         managerAtaque = GetComponentInParent<ManagerAtaque>();
     }

@@ -2,20 +2,19 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Interactuar : MonoBehaviour
+public class LogicaInteractuar : MonoBehaviour
 {
-    public GameObject habilidad;
     public GameObject botonF;
 
     private void OnTriggerStay(Collider other)
     {
-        if (other.CompareTag("Player"))
+        if (other.CompareTag("Dash"))
         {
             botonF.SetActive(true);
             if (Input.GetButtonDown("Interactuar"))
             {
-                other.gameObject.GetComponent<Player>().dashObtenido = true;
-                habilidad.SetActive(false);
+                other.GetComponent<LogicaObjeto>().Efecto();
+                Destroy(other.gameObject);
                 botonF.SetActive(false);
             }
         }
