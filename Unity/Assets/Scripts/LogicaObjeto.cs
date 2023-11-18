@@ -6,7 +6,7 @@ public class LogicaObjeto : MonoBehaviour
 {
     public LogicaPlayer player;
     public int tipo;
-    void start()
+    void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player").GetComponent<LogicaPlayer>();
     }

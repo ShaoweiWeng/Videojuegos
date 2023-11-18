@@ -6,7 +6,7 @@ public class LogicaInteractuar : MonoBehaviour
 {
     public GameObject botonF;
 
-    private void OnTriggerStay(Collider other)
+    private void OnTriggerStay2D(Collider2D other)
     {
         if (other.CompareTag("Dash"))
         {
@@ -19,7 +19,7 @@ public class LogicaInteractuar : MonoBehaviour
             }
         }
     }
-    private void OnTriggerExit(Collider other)
+    private void OnTriggerExit2D(Collider2D other)
     {
         botonF.SetActive(false);
     }
