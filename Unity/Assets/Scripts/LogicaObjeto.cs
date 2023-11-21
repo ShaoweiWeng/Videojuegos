@@ -4,8 +4,9 @@ using UnityEngine;
 
 public class LogicaObjeto : MonoBehaviour
 {
-    public LogicaPlayer player;
+    private LogicaPlayer player;
     public int tipo;
+
     void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player").GetComponent<LogicaPlayer>();
@@ -15,7 +16,10 @@ public class LogicaObjeto : MonoBehaviour
         switch (tipo)
         {
             case 1:
-                player.dashObtenido = true;
+                player.dashObtenido = true; 
+                break;
+            case 2:
+                player.llaveObtenido = true;
                 break;
         }
     }

@@ -26,7 +26,9 @@ public class LogicaPlayer : MonoBehaviour
     private Vector2 dashDirection;
     private TrailRenderer trailRenderer;
     private float maxVelocity = 35f;
+    
     public bool dashObtenido = false;
+    public bool llaveObtenido = false;
 
 
     // Start is called before the first frame update

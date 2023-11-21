@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class LogicaInteractuar : MonoBehaviour
+public class LogicaDash : MonoBehaviour
 {
     public GameObject botonF;
 
