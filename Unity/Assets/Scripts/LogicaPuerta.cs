@@ -12,6 +12,11 @@ public class LogicaPuerta : MonoBehaviour
     public GameObject botonF;
     private LogicaPlayer player;
 
+    private bool onKey = false;
+    private bool onDoor = false;
+    private Collider2D collision;
+
+
     void Start()
     {
         key.SetActive(false);
@@ -20,47 +25,57 @@ public class LogicaPuerta : MonoBehaviour
         player = GameObject.FindGameObjectWithTag("Player").GetComponent<LogicaPlayer>();
     }
 
+    void Update()
+    {
+        if (onKey && Input.GetButtonDown("Interactuar"))
+        {
+            collision.GetComponent<LogicaObjeto>().Efecto();
+            Destroy(collision.gameObject);
+            botonF.SetActive(false);
+        }
+        if (onDoor && Input.GetButtonDown("Interactuar"))
+        {
+            animPuerta.SetTrigger("abrir");
+            animPuertab.SetTrigger("abrir");
+        }
+    }
+
     private void OnTriggerStay2D(Collider2D collision)
     {
+        this.collision = collision;
         if (collision.CompareTag("key"))
         {
             botonF.SetActive(true);
-            if (Input.GetButtonDown("Interactuar"))
-            {
-                collision.GetComponent<LogicaObjeto>().Efecto();
-                Destroy(collision.gameObject);
-                botonF.SetActive(false);
-            }
+            onKey = true;
         }
 
-        if (collision.tag.Equals("door") && !player.llaveObtenido)
+        if (collision.CompareTag("door"))
         {
-            nokey.SetActive(true);
-        }
-        if (collision.tag.Equals("door") && player.llaveObtenido)
-        {
-            key.SetActive(true);
-            btnPuerta.SetActive(true);
-            if (Input.GetButtonDown("Interactuar"))
+            onDoor = true;
+            if (!player.llaveObtenido) { nokey.SetActive(true); }
+            else
             {
-                animPuerta.SetTrigger("abrir");
-                animPuertab.SetTrigger("abrir");
+                key.SetActive(true);
+                btnPuerta.SetActive(true);
             }
         }
     }
     private void OnTriggerExit2D(Collider2D collision)
     {
-        if (collision.CompareTag("key")) { botonF.SetActive(false); }
-        if (collision.tag.Equals("door") && !player.llaveObtenido)
+        if (collision.CompareTag("key"))
         {
-            nokey.SetActive(false);
+            botonF.SetActive(false);
+            onKey = false;
         }
-        if (collision.tag.Equals("door") && player.llaveObtenido)
+        if (collision.CompareTag("door"))
         {
-            key.SetActive(false);
-            btnPuerta.SetActive(false);
+            if (!player.llaveObtenido) { nokey.SetActive(false); }
+            else
+            {
+                key.SetActive(false);
+                btnPuerta.SetActive(false);
+            }
         }
-
     }
 
 }
