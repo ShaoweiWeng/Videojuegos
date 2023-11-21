@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.44657844, g: 0.49641222, b: 0.57481676, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657826, g: 0.49641263, b: 0.57481676, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -8052,7 +8052,7 @@ Transform:
   m_GameObject: {fileID: 963194225}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 163.7, y: -7.2000003, z: -10}
+  m_LocalPosition: {x: -26.9, y: 5.8999996, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -8610,7 +8610,7 @@ Transform:
   m_GameObject: {fileID: 1206717893}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 163.7, y: -7.2000003, z: -10}
+  m_LocalPosition: {x: -26.9, y: 5.8999996, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -69121,6 +69121,7 @@ GameObject:
   - component: {fileID: 1653061786}
   - component: {fileID: 1653061787}
   - component: {fileID: 1653061788}
+  - component: {fileID: 1653061789}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -69187,7 +69188,7 @@ Transform:
   m_GameObject: {fileID: 1653061776}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 163.7, y: -7.2, z: 0}
+  m_LocalPosition: {x: -26.9, y: 5.9, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 0.5}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -69461,6 +69462,18 @@ MonoBehaviour:
   animPuerta: {fileID: 1811272210}
   animPuertab: {fileID: 406727224}
   botonF: {fileID: 1219544147}
+--- !u!114 &1653061789
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1653061776}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ef196e784e8032e4284423dcfe0ba2f0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1697676856
 GameObject:
   m_ObjectHideFlags: 0
@@ -69473,8 +69486,9 @@ GameObject:
   - component: {fileID: 1697676858}
   - component: {fileID: 1697676857}
   - component: {fileID: 1697676860}
+  - component: {fileID: 1697676861}
   m_Layer: 0
-  m_Name: Square
+  m_Name: LongEnemy
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -69612,6 +69626,22 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!114 &1697676861
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1697676856}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 143dfaa19e526fe41b9a2b4c18c9bdb5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  "puedeSerDa\xF1ado": 1
+  vidaTotal: 100
+  vidaActual: 0
+  daKnockbackUp: 1
 --- !u!1 &1811272206
 GameObject:
   m_ObjectHideFlags: 0

@@ -1,27 +1,35 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor.Callbacks;
 using UnityEngine;
 
 public class EnemyLongBullet : MonoBehaviour
 {
-
-    public float speed = 1f;
-    Vector2 targetVector;
     GameObject playerTarget;
-    Rigidbody2D bulletrb;
-    Vector2 movementVector;
+    float speed = 10f;
+    Vector2 movementDir;
 
-
-    // Start is called before the first frame update
     void Start()
     {
-        bulletrb = GetComponent<Rigidbody2D>();
+
         playerTarget = GameObject.FindGameObjectWithTag("Player");
 
-        targetVector = (playerTarget.transform.position - transform.position).normalized * speed;
-        movementVector = new Vector2(targetVector.x, targetVector.y);
-        bulletrb.velocity = movementVector;
+        movementDir = (playerTarget.transform.position - transform.position).normalized;
 
         Destroy(this.gameObject,3);
+
+    }
+
+    void Update()
+    {
+        transform.Translate(movementDir * speed * Time.deltaTime);
+        var posicion = transform.position;
+    }
+
+    private void OnCollisionEnter2D(Collision2D other){
+        if(other.gameObject.CompareTag("Player")){
+            playerTarget.GetComponent<HealthPlayer>().takeDamagePlayer(1);
+            Destroy(this.gameObject);
+        }
     }
 }
