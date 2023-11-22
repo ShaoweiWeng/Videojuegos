@@ -14,6 +14,8 @@ public class ManagerAtaque : MonoBehaviour
     //private Animator anim;
     private LogicaPlayer player;
 
+    public bool espadaObtenido = false;
+
     private void Start()
     {
         //anim = GetComponent<Animator>();
@@ -28,25 +30,28 @@ public class ManagerAtaque : MonoBehaviour
 
     private void CheckInput()
     {
-        pulsadoAtaque = Input.GetButtonDown("Attack");
+        if (espadaObtenido)
+        {
+            pulsadoAtaque = Input.GetButtonDown("Attack");
 
-        // ATAQUE ARRIBA
-        if (pulsadoAtaque && Input.GetAxis("Vertical") > 0)
-        {
-            //anim.SetTrigger("UpwardsMelee");
-            meleeAnimator.SetTrigger("UpwardsMeleeSwipe");
-        }
-        // ATAQUE ABAJO
-        if (pulsadoAtaque && Input.GetAxis("Vertical") < 0 && !(player.isGrounded()))
-        {
-            //anim.SetTrigger("DownwardsMelee");
-            meleeAnimator.SetTrigger("DownwardsMeleeSwipe");
-        }
-        // ATAQUE IZQ O DER (ATAQUE DEFAULT)
-        if ((pulsadoAtaque && Input.GetAxis("Vertical") == 0) || pulsadoAtaque && (Input.GetAxis("Vertical") < 0 && player.isGrounded()))
-        {
-            //anim.SetTrigger("ForwardMelee");
-            meleeAnimator.SetTrigger("ForwardMeleeSwipe");
+            // ATAQUE ARRIBA
+            if (pulsadoAtaque && Input.GetAxis("Vertical") > 0)
+            {
+                //anim.SetTrigger("UpwardsMelee");
+                meleeAnimator.SetTrigger("UpwardsMeleeSwipe");
+            }
+            // ATAQUE ABAJO
+            if (pulsadoAtaque && Input.GetAxis("Vertical") < 0 && !(player.isGrounded()))
+            {
+                //anim.SetTrigger("DownwardsMelee");
+                meleeAnimator.SetTrigger("DownwardsMeleeSwipe");
+            }
+            // ATAQUE IZQ O DER (ATAQUE DEFAULT)
+            if ((pulsadoAtaque && Input.GetAxis("Vertical") == 0) || pulsadoAtaque && (Input.GetAxis("Vertical") < 0 && player.isGrounded()))
+            {
+                //anim.SetTrigger("ForwardMelee");
+                meleeAnimator.SetTrigger("ForwardMeleeSwipe");
+            }
         }
     }
 }
