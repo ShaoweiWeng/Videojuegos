@@ -16,6 +16,10 @@ public class HealthPlayer : MonoBehaviour
     [SerializeField] private UnityEngine.UI.Image[] heartsInHealthBar;
     [SerializeField] private Sprite fullHeart, emptyHeart;
 
+    //-.-.-ATRIBUTOS - KNOCKBACK-.-.-
+    private Rigidbody2D rb;
+    private float force = 100;
+
 
     // Start is called before the first frame update
     void Start()
@@ -23,6 +27,7 @@ public class HealthPlayer : MonoBehaviour
         currentHealth = maxHealth;
         createHealthBar();
         invencible = false;
+        rb = GetComponent<Rigidbody2D>();
     }
 
     //Estas funciones se llaman en el objeto que hace daño al jugador
@@ -83,6 +88,15 @@ public class HealthPlayer : MonoBehaviour
             {
                 heartsInHealthBar[i].sprite = emptyHeart;
             }
+        }
+    }
+
+    //EL JUGADOR HA TOCADO A UN ENEMIGO
+    private void OnCollisionEnter2D(Collision2D other){
+        if(other.gameObject.CompareTag("Enemy") && !invencible){
+            var opposite = -rb.velocity;
+            rb.AddForce(transform.up * Time.deltaTime * force);
+            takeDamagePlayer(1);
         }
     }
 

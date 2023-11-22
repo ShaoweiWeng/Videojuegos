@@ -8052,7 +8052,7 @@ Transform:
   m_GameObject: {fileID: 963194225}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -26.9, y: 5.8999996, z: -10}
+  m_LocalPosition: {x: -41.4, y: 8.42, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -8610,7 +8610,7 @@ Transform:
   m_GameObject: {fileID: 1206717893}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -26.9, y: 5.8999996, z: -10}
+  m_LocalPosition: {x: -41.4, y: 8.42, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -69121,7 +69121,6 @@ GameObject:
   - component: {fileID: 1653061786}
   - component: {fileID: 1653061787}
   - component: {fileID: 1653061788}
-  - component: {fileID: 1653061789}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -69188,7 +69187,7 @@ Transform:
   m_GameObject: {fileID: 1653061776}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -26.9, y: 5.9, z: 0}
+  m_LocalPosition: {x: -41.4, y: 8.42, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 0.5}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -69462,18 +69461,6 @@ MonoBehaviour:
   animPuerta: {fileID: 1811272210}
   animPuertab: {fileID: 406727224}
   botonF: {fileID: 1219544147}
---- !u!114 &1653061789
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1653061776}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ef196e784e8032e4284423dcfe0ba2f0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1697676856
 GameObject:
   m_ObjectHideFlags: 0
