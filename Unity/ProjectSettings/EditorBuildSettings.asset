@@ -14,4 +14,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Zona Militar.unity
     guid: 6d4dec542f7c6d347a5a2346b022e3ab
+  - enabled: 1
+    path: Assets/Scenes/SalaFinal_Boss.unity
+    guid: dc180938e5516094eb528ffd9c7311bd
   m_configObjects: {}
