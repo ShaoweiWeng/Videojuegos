@@ -31,6 +31,9 @@ public class LogicaPlayer : MonoBehaviour
     public bool llaveObtenido = false;
 
 
+    public bool enKnockb = false;   //true si el personaje está en knockback porque ha tocado un enemigo
+
+
     // Start is called before the first frame update
     void Start()
     {
@@ -43,40 +46,42 @@ public class LogicaPlayer : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        GetInputs();
-        Walk();
-        Jump();
+        if(!enKnockb){
+            GetInputs();
+            Walk();
+            Jump();
 
-        // GIRAR PERSONAJE
-        if (xAxis > 0 && isFacingLeft)
-        {
-            isFacingLeft = false;
-            Flip();
-        }
-        if (xAxis < 0 && !isFacingLeft)
-        {
-            isFacingLeft = true;
-            Flip();
-        }
-
-        if (dashObtenido && Input.GetButtonDown("Dash") && canDash)
-        {
-            isDashing = true;
-            canDash = false;
-            trailRenderer.emitting = true;
-            dashDirection = new Vector2(xAxis, yAxis);
-            if (dashDirection == Vector2.zero)
+            // GIRAR PERSONAJE
+            if (xAxis > 0 && isFacingLeft)
             {
-                dashDirection = new Vector2(transform.localScale.x, 0);
+                isFacingLeft = false;
+                Flip();
             }
-            StartCoroutine(routine: StopDashing());
+            if (xAxis < 0 && !isFacingLeft)
+            {
+                isFacingLeft = true;
+                Flip();
+            }
+
+            if (dashObtenido && Input.GetButtonDown("Dash") && canDash)
+            {
+                isDashing = true;
+                canDash = false;
+                trailRenderer.emitting = true;
+                dashDirection = new Vector2(xAxis, yAxis);
+                if (dashDirection == Vector2.zero)
+                {
+                    dashDirection = new Vector2(transform.localScale.x, 0);
+                }
+                StartCoroutine(routine: StopDashing());
+            }
+            if (isDashing)
+            {
+                rb.velocity = dashDirection.normalized * dashVelocity;
+                return; // Sin este return puede hacer dos dash seguidos, si el primer dash lo hace desde una plataforma sin haber saltado
+            }
+            if (isGrounded()) canDash = true;
         }
-        if (isDashing)
-        {
-            rb.velocity = dashDirection.normalized * dashVelocity;
-            return; // Sin este return puede hacer dos dash seguidos, si el primer dash lo hace desde una plataforma sin haber saltado
-        }
-        if (isGrounded()) canDash = true;
     }
 
     void FixedUpdate()
