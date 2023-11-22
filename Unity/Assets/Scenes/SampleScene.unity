@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657844, g: 0.49641222, b: 0.57481676, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -8405,7 +8405,7 @@ Transform:
   m_GameObject: {fileID: 963194225}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -34.8, y: 6.6999993, z: -10}
+  m_LocalPosition: {x: 142.17, y: -104.41, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -9106,7 +9106,7 @@ Transform:
   m_GameObject: {fileID: 1206717893}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -34.8, y: 6.6999993, z: -10}
+  m_LocalPosition: {x: 142.17, y: -104.41, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -69403,7 +69403,7 @@ Transform:
   m_GameObject: {fileID: 1653061776}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -34.8, y: 6.7, z: 0}
+  m_LocalPosition: {x: 142.17, y: -104.41, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 0.5}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -69680,6 +69680,8 @@ MonoBehaviour:
   animPuerta: {fileID: 1811272210}
   animPuertab: {fileID: 406727224}
   botonF: {fileID: 1219544147}
+  bloqueo: {fileID: 2092777351}
+  bloqueo2: {fileID: 348456124}
 --- !u!114 &1653061789
 MonoBehaviour:
   m_ObjectHideFlags: 0

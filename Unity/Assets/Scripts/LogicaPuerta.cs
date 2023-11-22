@@ -16,6 +16,9 @@ public class LogicaPuerta : MonoBehaviour
     private bool onDoor = false;
     private Collider2D collision;
 
+    public GameObject bloqueo;
+    public GameObject bloqueo2;
+
 
     void Start()
     {
@@ -31,6 +34,8 @@ public class LogicaPuerta : MonoBehaviour
         {
             collision.GetComponent<LogicaObjeto>().Efecto();
             Destroy(collision.gameObject);
+            Destroy(bloqueo);
+            Destroy(bloqueo2);
             botonF.SetActive(false);
         }
         if (onDoor && Input.GetButtonDown("Interactuar"))
