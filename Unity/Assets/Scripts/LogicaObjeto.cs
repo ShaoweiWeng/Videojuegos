@@ -5,11 +5,13 @@ using UnityEngine;
 public class LogicaObjeto : MonoBehaviour
 {
     private LogicaPlayer player;
+    private ManagerAtaque espada;
     public int tipo;
 
     void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player").GetComponent<LogicaPlayer>();
+        espada = GameObject.FindGameObjectWithTag("Player").GetComponent<ManagerAtaque>();
     }
     public void Efecto()
     {
@@ -20,6 +22,9 @@ public class LogicaObjeto : MonoBehaviour
                 break;
             case 2:
                 player.llaveObtenido = true;
+                break;
+            case 3:
+                espada.espadaObtenido = true;
                 break;
         }
     }
