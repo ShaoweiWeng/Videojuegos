@@ -53,7 +53,7 @@ public class HealthPlayer : MonoBehaviour
                 currentHealth = 0;
                 MuerteJugador?.Invoke(this, EventArgs.Empty);//Para crear un evento
 
-                Destroy(gameObject);
+                //Destroy(gameObject);
                 //AÑADIR ANIMACIONES DE MUERTE + GAMEOVER ETC
             }
             else

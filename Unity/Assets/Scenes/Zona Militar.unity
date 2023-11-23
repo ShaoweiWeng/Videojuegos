@@ -129396,6 +129396,7 @@ MonoBehaviour:
   maxHealth: 10
   currentHealth: 0
   invincibilityTime: 1.5
+  healTime: 30
   heartsInHealthBar:
   - {fileID: 1591755851}
   - {fileID: 1530964535}

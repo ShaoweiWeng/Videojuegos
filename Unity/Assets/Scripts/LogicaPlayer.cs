@@ -41,7 +41,6 @@ public class LogicaPlayer : MonoBehaviour
         trailRenderer = GetComponent<TrailRenderer>();
         isFacingLeft = false; // Suponiendo que siempre se va a spawnear mirando hacia la derecha
         
-        
         facingLeft = new Vector2(-transform.localScale.x, transform.localScale.y);
     }
 
