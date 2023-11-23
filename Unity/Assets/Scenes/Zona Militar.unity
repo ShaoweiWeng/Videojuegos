@@ -137,7 +137,6 @@ GameObject:
   - component: {fileID: 57261941}
   - component: {fileID: 57261940}
   - component: {fileID: 57261939}
-  - component: {fileID: 57261938}
   m_Layer: 3
   m_Name: zonaM
   m_TagString: Untagged
@@ -160,22 +159,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1379806997}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &57261938
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 57261936}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 143dfaa19e526fe41b9a2b4c18c9bdb5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  "puedeSerDa\xF1ado": 0
-  vidaTotal: 100
-  vidaActual: 0
-  daKnockbackUp: 0
 --- !u!66 &57261939
 CompositeCollider2D:
   m_ObjectHideFlags: 0
@@ -130790,10 +130773,7 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 1508459293042165145, guid: fc011b67c0bab4cf2b59bb1b0fdfb1be, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 0}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fc011b67c0bab4cf2b59bb1b0fdfb1be, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:

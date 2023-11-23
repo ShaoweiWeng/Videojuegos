@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.44657826, g: 0.49641263, b: 0.57481676, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657844, g: 0.49641222, b: 0.57481676, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -137,7 +137,6 @@ GameObject:
   - component: {fileID: 57261941}
   - component: {fileID: 57261940}
   - component: {fileID: 57261939}
-  - component: {fileID: 57261938}
   m_Layer: 3
   m_Name: zonaM
   m_TagString: Untagged
@@ -160,22 +159,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1379806997}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &57261938
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 57261936}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 143dfaa19e526fe41b9a2b4c18c9bdb5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  "puedeSerDa\xF1ado": 0
-  vidaTotal: 100
-  vidaActual: 0
-  daKnockbackUp: 0
 --- !u!66 &57261939
 CompositeCollider2D:
   m_ObjectHideFlags: 0
@@ -122679,7 +122662,6 @@ GameObject:
   - component: {fileID: 272084991}
   - component: {fileID: 272084990}
   - component: {fileID: 272084989}
-  - component: {fileID: 272084988}
   m_Layer: 0
   m_Name: Boss
   m_TagString: Untagged
@@ -122702,22 +122684,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1379806997}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &272084988
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 272084986}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 143dfaa19e526fe41b9a2b4c18c9bdb5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  "puedeSerDa\xF1ado": 1
-  vidaTotal: 100
-  vidaActual: 0
-  daKnockbackUp: 1
 --- !u!66 &272084989
 CompositeCollider2D:
   m_ObjectHideFlags: 0
@@ -126485,6 +126451,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   botonPausa: {fileID: 1487110947}
   menuPausa: {fileID: 603705722}
+  menuinicial: {fileID: 0}
 --- !u!114 &1115162086
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -127564,6 +127531,7 @@ MonoBehaviour:
     m_Bits: 8
   dashObtenido: 0
   llaveObtenido: 0
+  enKnockb: 0
 --- !u!96 &1653061784
 TrailRenderer:
   serializedVersion: 3
@@ -127737,6 +127705,7 @@ MonoBehaviour:
   fuerzaDefault: 100
   fuerzaArriba: 65
   tiempoKnockback: 0.1
+  espadaObtenido: 0
 --- !u!114 &1653061787
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -127765,6 +127734,7 @@ MonoBehaviour:
   - {fileID: 157397517}
   fullHeart: {fileID: 21300000, guid: ae90f16857a5cd54293da6bb9a5eface, type: 3}
   emptyHeart: {fileID: 21300000, guid: c5107af59cc40ce428773955e3f4585d, type: 3}
+  knockbackTime: 0.4
 --- !u!114 &1653061788
 MonoBehaviour:
   m_ObjectHideFlags: 0

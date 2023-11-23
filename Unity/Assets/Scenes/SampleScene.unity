@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.44657826, g: 0.49641263, b: 0.57481676, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657844, g: 0.49641222, b: 0.57481676, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -10871,7 +10871,6 @@ GameObject:
   - component: {fileID: 1364914549}
   - component: {fileID: 1364914548}
   - component: {fileID: 1364914547}
-  - component: {fileID: 1364914550}
   m_Layer: 3
   m_Name: NivelC
   m_TagString: Untagged
@@ -69115,22 +69114,6 @@ TilemapCollider2D:
   m_MaximumTileChangeCount: 1000
   m_ExtrusionFactor: 0
   m_UseDelaunayMesh: 0
---- !u!114 &1364914550
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1364914540}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 143dfaa19e526fe41b9a2b4c18c9bdb5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  "puedeSerDa\xF1ado": 0
-  vidaTotal: 100
-  vidaActual: 0
-  daKnockbackUp: 0
 --- !u!1 &1379806995
 GameObject:
   m_ObjectHideFlags: 0
