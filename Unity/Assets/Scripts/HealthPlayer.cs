@@ -1,5 +1,6 @@
 using System.Collections;
 using UnityEngine;
+using System;
 
 
 public class HealthPlayer : MonoBehaviour
@@ -21,6 +22,9 @@ public class HealthPlayer : MonoBehaviour
     private Vector2 direction;
 
 
+    //-.-.-EVENTOS - GAMEOVER -.-.-
+    public event EventHandler MuerteJugador;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -41,6 +45,9 @@ public class HealthPlayer : MonoBehaviour
             if( currentHealth <= 0)
             {
                 currentHealth = 0;
+                MuerteJugador?.Invoke(this, EventArgs.Empty);//Para crear un evento
+                
+                Destroy(gameObject);
                 //AÑADIR ANIMACIONES DE MUERTE + GAMEOVER ETC
             }
             else{
