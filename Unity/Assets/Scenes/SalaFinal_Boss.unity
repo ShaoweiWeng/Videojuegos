@@ -127721,17 +127721,13 @@ MonoBehaviour:
   maxHealth: 5
   currentHealth: 0
   invincibilityTime: 1.5
+  healTime: 30
   heartsInHealthBar:
   - {fileID: 1591755851}
   - {fileID: 1530964535}
   - {fileID: 776895842}
   - {fileID: 1996707272}
   - {fileID: 1468519925}
-  - {fileID: 1106674103}
-  - {fileID: 1166246630}
-  - {fileID: 530052717}
-  - {fileID: 2138907461}
-  - {fileID: 157397517}
   fullHeart: {fileID: 21300000, guid: ae90f16857a5cd54293da6bb9a5eface, type: 3}
   emptyHeart: {fileID: 21300000, guid: c5107af59cc40ce428773955e3f4585d, type: 3}
   knockbackTime: 0.4
