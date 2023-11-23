@@ -38,7 +38,7 @@ public class LogicaPuerta : MonoBehaviour
             Destroy(bloqueo2);
             botonF.SetActive(false);
         }
-        if (onDoor && Input.GetButtonDown("Interactuar"))
+        if (player.llaveObtenido && onDoor && Input.GetButtonDown("Interactuar"))
         {
             animPuerta.SetTrigger("abrir");
             animPuertab.SetTrigger("abrir");
