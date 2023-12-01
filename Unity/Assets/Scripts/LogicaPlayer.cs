@@ -29,6 +29,7 @@ public class LogicaPlayer : MonoBehaviour
     
     public bool dashObtenido = false;
     public bool llaveObtenido = false;
+    public int llavesBoss = 0;
 
 
     public bool enKnockb = false;   //true si el personaje está en knockback porque ha tocado un enemigo

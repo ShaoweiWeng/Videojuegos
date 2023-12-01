@@ -8,6 +8,7 @@ public class LogicaObjeto : MonoBehaviour
     private ManagerAtaque espada;
     public int tipo;
 
+    public GameObject botonF;
     void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player").GetComponent<LogicaPlayer>();
@@ -18,7 +19,7 @@ public class LogicaObjeto : MonoBehaviour
         switch (tipo)
         {
             case 1:
-                player.dashObtenido = true; 
+                player.dashObtenido = true;
                 break;
             case 2:
                 player.llaveObtenido = true;
@@ -26,6 +27,19 @@ public class LogicaObjeto : MonoBehaviour
             case 3:
                 espada.espadaObtenido = true;
                 break;
+            case 4:
+                player.llavesBoss += 1;
+                break;
         }
+    }
+    private void OnTriggerStay2D(Collider2D other)
+    {
+        botonF.SetActive(true);
+    }
+    private void OnTriggerExit2D(Collider2D other)
+    {
+
+        botonF.SetActive(false);
+
     }
 }
