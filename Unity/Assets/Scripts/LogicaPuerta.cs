@@ -9,7 +9,6 @@ public class LogicaPuerta : MonoBehaviour
     public GameObject btnPuerta;
     public Animator animPuerta;
     public Animator animPuertab;
-    public GameObject botonF;
     private LogicaPlayer player;
 
     private bool onKey = false;
@@ -36,7 +35,6 @@ public class LogicaPuerta : MonoBehaviour
             Destroy(collision.gameObject);
             Destroy(bloqueo);
             Destroy(bloqueo2);
-            botonF.SetActive(false);
         }
         if (player.llaveObtenido && onDoor && Input.GetButtonDown("Interactuar"))
         {
@@ -50,7 +48,6 @@ public class LogicaPuerta : MonoBehaviour
         this.collision = collision;
         if (collision.CompareTag("key"))
         {
-            botonF.SetActive(true);
             onKey = true;
         }
 
@@ -69,7 +66,6 @@ public class LogicaPuerta : MonoBehaviour
     {
         if (collision.CompareTag("key"))
         {
-            botonF.SetActive(false);
             onKey = false;
         }
         if (collision.CompareTag("door"))

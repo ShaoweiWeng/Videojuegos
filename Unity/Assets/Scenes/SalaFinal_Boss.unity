@@ -125551,6 +125551,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   tipo: 1
+  botonF: {fileID: 0}
 --- !u!1 &551539087
 GameObject:
   m_ObjectHideFlags: 0
@@ -126222,6 +126223,8 @@ MonoBehaviour:
   botonPausa: {fileID: 1487110947}
   menuPausa: {fileID: 603705722}
   menuinicial: {fileID: 0}
+  menuOpciones: {fileID: 0}
+  menuAccesibilidad: {fileID: 0}
 --- !u!114 &1115162086
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -126515,11 +126518,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1159366597}
   m_CullTransparentMesh: 1
---- !u!1 &1178364769 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1508459293042165145, guid: fc011b67c0bab4cf2b59bb1b0fdfb1be, type: 3}
-  m_PrefabInstance: {fileID: 7984973650373338212}
-  m_PrefabAsset: {fileID: 0}
 --- !u!224 &1178364772 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 8309014721483222676, guid: fc011b67c0bab4cf2b59bb1b0fdfb1be, type: 3}
@@ -127105,7 +127103,6 @@ GameObject:
   - component: {fileID: 1653061785}
   - component: {fileID: 1653061786}
   - component: {fileID: 1653061787}
-  - component: {fileID: 1653061788}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -127226,6 +127223,7 @@ MonoBehaviour:
     m_Bits: 8
   dashObtenido: 0
   llaveObtenido: 0
+  llavesBoss: 0
   enKnockb: 0
 --- !u!96 &1653061784
 TrailRenderer:
@@ -127417,6 +127415,7 @@ MonoBehaviour:
   currentHealth: 0
   invincibilityTime: 1.5
   healTime: 30
+  noDamageModeActivated: 0
   heartsInHealthBar:
   - {fileID: 1591755851}
   - {fileID: 1530964535}
@@ -127426,19 +127425,6 @@ MonoBehaviour:
   fullHeart: {fileID: 21300000, guid: ae90f16857a5cd54293da6bb9a5eface, type: 3}
   emptyHeart: {fileID: 21300000, guid: c5107af59cc40ce428773955e3f4585d, type: 3}
   knockbackTime: 0.4
---- !u!114 &1653061788
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1653061776}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d32ccd5a31d254d799474296ad74ac98, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  botonF: {fileID: 1178364769}
 --- !u!1 &1846538186
 GameObject:
   m_ObjectHideFlags: 0

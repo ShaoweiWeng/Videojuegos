@@ -126597,7 +126597,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   tipo: 1
-  botonF: {fileID: 0}
+  botonF: {fileID: 1178364769}
 --- !u!1 &551539087
 GameObject:
   m_ObjectHideFlags: 0
@@ -129843,8 +129843,6 @@ GameObject:
   - component: {fileID: 1653061785}
   - component: {fileID: 1653061786}
   - component: {fileID: 1653061787}
-  - component: {fileID: 1653061788}
-  - component: {fileID: 1653061789}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -130167,31 +130165,6 @@ MonoBehaviour:
   fullHeart: {fileID: 21300000, guid: ae90f16857a5cd54293da6bb9a5eface, type: 3}
   emptyHeart: {fileID: 21300000, guid: c5107af59cc40ce428773955e3f4585d, type: 3}
   knockbackTime: 0.4
---- !u!114 &1653061788
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1653061776}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d32ccd5a31d254d799474296ad74ac98, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  botonF: {fileID: 1178364769}
---- !u!114 &1653061789
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1653061776}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3a03d6b6ff5b845979270821134562e4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1675217400
 GameObject:
   m_ObjectHideFlags: 3

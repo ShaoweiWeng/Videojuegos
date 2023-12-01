@@ -9,6 +9,7 @@ public class LogicaObjeto : MonoBehaviour
     public int tipo;
 
     public GameObject botonF;
+
     void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player").GetComponent<LogicaPlayer>();
@@ -32,14 +33,13 @@ public class LogicaObjeto : MonoBehaviour
                 break;
         }
     }
+
     private void OnTriggerStay2D(Collider2D other)
     {
         botonF.SetActive(true);
     }
     private void OnTriggerExit2D(Collider2D other)
     {
-
         botonF.SetActive(false);
-
     }
 }

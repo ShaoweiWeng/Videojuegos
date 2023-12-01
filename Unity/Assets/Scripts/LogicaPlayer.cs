@@ -26,10 +26,13 @@ public class LogicaPlayer : MonoBehaviour
     private Vector2 dashDirection;
     private TrailRenderer trailRenderer;
     private float maxVelocity = 35f;
-    
+
     public bool dashObtenido = false;
     public bool llaveObtenido = false;
     public int llavesBoss = 0;
+
+    private bool onObject = false;
+    private Collider2D other;
 
 
     public bool enKnockb = false;   //true si el personaje está en knockback porque ha tocado un enemigo
@@ -41,14 +44,15 @@ public class LogicaPlayer : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         trailRenderer = GetComponent<TrailRenderer>();
         isFacingLeft = false; // Suponiendo que siempre se va a spawnear mirando hacia la derecha
-        
+
         facingLeft = new Vector2(-transform.localScale.x, transform.localScale.y);
     }
 
     // Update is called once per frame
     void Update()
     {
-        if(!enKnockb){
+        if (!enKnockb)
+        {
             GetInputs();
             Walk();
             Jump();
@@ -83,6 +87,11 @@ public class LogicaPlayer : MonoBehaviour
                 return; // Sin este return puede hacer dos dash seguidos, si el primer dash lo hace desde una plataforma sin haber saltado
             }
             if (isGrounded()) canDash = true;
+        }
+        if (onObject && Input.GetButtonDown("Interactuar"))
+        {
+            other.GetComponent<LogicaObjeto>().Efecto();
+            Destroy(other.gameObject);
         }
     }
 
@@ -153,6 +162,15 @@ public class LogicaPlayer : MonoBehaviour
         {
             transform.localScale = new Vector2(-transform.localScale.x, transform.localScale.y);
         }
+    }
+    private void OnTriggerStay2D(Collider2D other)
+    {
+        this.other = other;
+        onObject = true;
+    }
+    private void OnTriggerExit2D(Collider2D other)
+    {
+        onObject = false;
     }
 
 }
