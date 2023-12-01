@@ -97,4 +97,8 @@ public class MenuInicial : MonoBehaviour
         menuOpciones.SetActive(false);
         menuAccesibilidad.SetActive(true);
     }
+
+    public void vidaInfinita(){
+        healtplayer.noDamageModeActivated = !healtplayer.noDamageModeActivated;
+    }
 }
