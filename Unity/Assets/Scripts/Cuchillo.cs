@@ -88,7 +88,6 @@ public class Cuchillo : MonoBehaviour
 
     private IEnumerator terminaKnockBack()
     {
-        //Waits in the amount of time setup by the meleeAttackManager script; this is by default .1 seconds
         yield return new WaitForSeconds(managerAtaque.tiempoKnockback);    // Esperar tiempoKnockback
         esAtaqueHaciaAbajo = false;
         hayKnockBack = false;

@@ -10,6 +10,9 @@ public class MenuInicial : MonoBehaviour
     [SerializeField] private GameObject menuPausa;
 
     [SerializeField] private GameObject menuinicial;
+
+    [SerializeField] private GameObject menuOpciones;
+    [SerializeField] private GameObject menuAccesibilidad;
     private HealthPlayer healtplayer;
 
     private bool juegoPause = false;
@@ -64,6 +67,8 @@ public class MenuInicial : MonoBehaviour
         Time.timeScale = 1f;
         botonPausa.SetActive(true);
         menuPausa.SetActive(false);
+        menuOpciones.SetActive(false);
+        menuAccesibilidad.SetActive(false);
     }
     public void Salir()
     {
@@ -79,5 +84,17 @@ public class MenuInicial : MonoBehaviour
     public void MenuPrincipal()
     {
         SceneManager.LoadScene(0);
+    }
+
+    public void abrirOpciones()
+    {
+        menuPausa.SetActive(false);
+        menuOpciones.SetActive(true);
+    }
+
+    public void abrirAccesibilidad()
+    {
+        menuOpciones.SetActive(false);
+        menuAccesibilidad.SetActive(true);
     }
 }

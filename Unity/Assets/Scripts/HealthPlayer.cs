@@ -10,6 +10,7 @@ public class HealthPlayer : MonoBehaviour
     [SerializeField] private int currentHealth;
     [SerializeField] private float invincibilityTime = 1.5f;
     [SerializeField] private float healTime = 30f;
+    public bool noDamageModeActivated = false;
 
     private Coroutine m_MyCoroutineReference;
     private bool invencible;
@@ -42,7 +43,7 @@ public class HealthPlayer : MonoBehaviour
     //Estas funciones se llaman en el objeto que hace daño al jugador
     public void takeDamagePlayer(int damage)
     {
-        if (!invencible && currentHealth > 0)
+        if (!invencible && currentHealth > 0 && !noDamageModeActivated)
         {
             StopCoroutine(m_MyCoroutineReference);
             m_MyCoroutineReference = StartCoroutine(heal());
