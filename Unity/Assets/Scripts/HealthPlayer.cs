@@ -25,9 +25,15 @@ public class HealthPlayer : MonoBehaviour
     [SerializeField] private float knockbackTime = .4f;
     private Vector2 direction;
 
-
     //-.-.-EVENTOS - GAMEOVER -.-.-
     public event EventHandler MuerteJugador;
+
+    //-.-.-ATRIBUTOS - PARPADEO-.-.-
+    SpriteRenderer mySprite;
+    Color oldColor;
+    Color colorParpadeo;
+    private Coroutine corutineParpadeo;
+
 
     // Start is called before the first frame update
     void Start()
@@ -37,6 +43,10 @@ public class HealthPlayer : MonoBehaviour
         invencible = false;
         rb = GetComponent<Rigidbody2D>();
         m_MyCoroutineReference = StartCoroutine(heal());
+
+        mySprite = this.GetComponent<SpriteRenderer>();
+        oldColor = mySprite.color;
+        colorParpadeo = new Color(1, 0, 0, 1);
     }
 
 
@@ -134,8 +144,10 @@ public class HealthPlayer : MonoBehaviour
 
     private IEnumerator invincibility()
     {
-        // AÑADIR ANIMACION PARPADEO
+        corutineParpadeo = StartCoroutine(parpadeo()); // ANIMACION PARPADEO
         yield return new WaitForSeconds(invincibilityTime);    // Esperar tiempo de invlunerabilidad
+        StopCoroutine(corutineParpadeo); // Paramos parpadeo
+        mySprite.color = oldColor; // Devolvemos el sprite a su color original
         invencible = false; // Puede ser golpeado otra vez
     }
 
@@ -151,6 +163,16 @@ public class HealthPlayer : MonoBehaviour
         {
             yield return new WaitForSeconds(healTime);
             healDamagePlayer(1);
+        }
+    }
+
+    private IEnumerator parpadeo()
+    {
+        while(true){
+            mySprite.color = colorParpadeo;
+            yield return new WaitForSeconds(0.2f);
+            mySprite.color = oldColor;
+            yield return new WaitForSeconds(0.2f);
         }
     }
 }
