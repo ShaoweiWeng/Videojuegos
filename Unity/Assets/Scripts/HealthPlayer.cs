@@ -34,6 +34,11 @@ public class HealthPlayer : MonoBehaviour
     Color colorParpadeo;
     private Coroutine corutineParpadeo;
 
+    private void Awake()
+    {
+        loadData();
+        updateHealthBar();
+    }
 
     // Start is called before the first frame update
     void Start()
@@ -49,6 +54,10 @@ public class HealthPlayer : MonoBehaviour
         colorParpadeo = new Color(1, 0, 0, 1);
     }
 
+    private void OnDestroy()
+    {
+        saveData();
+    }
 
     //Estas funciones se llaman en el objeto que hace daño al jugador
     public void takeDamagePlayer(int damage)
@@ -168,11 +177,24 @@ public class HealthPlayer : MonoBehaviour
 
     private IEnumerator parpadeo()
     {
-        while(true){
+        while (true)
+        {
             mySprite.color = colorParpadeo;
             yield return new WaitForSeconds(0.2f);
             mySprite.color = oldColor;
             yield return new WaitForSeconds(0.2f);
         }
     }
+
+    private void saveData()
+    {
+        PlayerPrefs.SetInt("vidaInfinita", noDamageModeActivated ? 1 : 0);
+        PlayerPrefs.SetInt("vida", currentHealth);
+    }
+    private void loadData()
+    {
+        noDamageModeActivated = PlayerPrefs.GetInt("vidaInfinita", 0) == 1;
+        currentHealth = PlayerPrefs.GetInt("vida", maxHealth);
+    }
+
 }

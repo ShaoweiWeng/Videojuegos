@@ -27,6 +27,7 @@ public class LogicaPlayer : MonoBehaviour
     private TrailRenderer trailRenderer;
     private float maxVelocity = 35f;
 
+    //-.-VARIABLES A GUARDAR-.-
     public bool dashObtenido = false;
     public bool llaveObtenido = false;
     public int llavesBoss = 0;
@@ -37,7 +38,10 @@ public class LogicaPlayer : MonoBehaviour
 
     public bool enKnockb = false;   //true si el personaje está en knockback porque ha tocado un enemigo
 
-
+    private void Awake()
+    {
+        loadData();
+    }
     // Start is called before the first frame update
     void Start()
     {
@@ -98,6 +102,11 @@ public class LogicaPlayer : MonoBehaviour
     void FixedUpdate()
     {
         rb.velocity = Vector2.ClampMagnitude(rb.velocity, maxVelocity); // Tope de velocidad
+    }
+
+    private void OnDestroy()
+    {
+        saveData();
     }
 
     void GetInputs()
@@ -173,4 +182,16 @@ public class LogicaPlayer : MonoBehaviour
         onObject = false;
     }
 
+    private void saveData()
+    {
+        PlayerPrefs.SetInt("dash", dashObtenido ? 1 : 0);
+        PlayerPrefs.SetInt("llave", llaveObtenido ? 1 : 0);
+        PlayerPrefs.SetInt("llavesBoss", llavesBoss);
+    }
+    private void loadData()
+    {
+        dashObtenido = PlayerPrefs.GetInt("dash", 0) == 1;
+        llaveObtenido = PlayerPrefs.GetInt("llave", 0) == 1;
+        llavesBoss = PlayerPrefs.GetInt("llavesBoss", 0);
+    }
 }

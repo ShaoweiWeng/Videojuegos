@@ -14,7 +14,13 @@ public class ManagerAtaque : MonoBehaviour
     //private Animator anim;
     private LogicaPlayer player;
 
+    //-.-VARIABLES A GUARDAR-.-
     public bool espadaObtenido = false;
+
+    private void Awake()
+    {
+        loadData();
+    }
 
     private void Start()
     {
@@ -26,6 +32,11 @@ public class ManagerAtaque : MonoBehaviour
     private void Update()
     {
         CheckInput();
+    }
+
+    private void OnDestroy()
+    {
+        saveData();
     }
 
     private void CheckInput()
@@ -53,5 +64,14 @@ public class ManagerAtaque : MonoBehaviour
                 meleeAnimator.SetTrigger("ForwardMeleeSwipe");
             }
         }
+    }
+
+    private void saveData()
+    {
+        PlayerPrefs.SetInt("espada", espadaObtenido ? 1 : 0);
+    }
+    private void loadData()
+    {
+        espadaObtenido = PlayerPrefs.GetInt("espada", 0) == 1;
     }
 }
