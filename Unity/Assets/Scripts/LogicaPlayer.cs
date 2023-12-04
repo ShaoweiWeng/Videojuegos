@@ -95,7 +95,9 @@ public class LogicaPlayer : MonoBehaviour
         if (onObject && Input.GetButtonDown("Interactuar"))
         {
             other.GetComponent<LogicaObjeto>().Efecto();
-            Destroy(other.gameObject);
+            if (other.CompareTag("ObjetoEliminable")){
+                Destroy(other.gameObject);
+            }
         }
     }
 

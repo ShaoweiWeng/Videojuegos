@@ -4,11 +4,12 @@
 TagManager:
   serializedVersion: 2
   tags:
-  - Dash
   - door
-  - key
   - Enemy
-  - Arma
+  - Menu
+  - ObjetoEliminable
+  - Dash
+  - key
   layers:
   - Default
   - TransparentFX

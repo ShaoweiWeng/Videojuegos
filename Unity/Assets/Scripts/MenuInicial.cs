@@ -13,9 +13,13 @@ public class MenuInicial : MonoBehaviour
 
     [SerializeField] private GameObject menuOpciones;
     [SerializeField] private GameObject menuAccesibilidad;
+
+    [SerializeField] private GameObject objeto;
+    [SerializeField] private GameObject informe2;
+
     private HealthPlayer healtplayer;
 
-    private bool juegoPause = false;
+    public bool juegoPause = false;
 
 
     private void Start()
@@ -33,7 +37,8 @@ public class MenuInicial : MonoBehaviour
 
 
 
-    public void jugar(){
+    public void jugar()
+    {
 
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
@@ -69,10 +74,11 @@ public class MenuInicial : MonoBehaviour
         menuPausa.SetActive(false);
         menuOpciones.SetActive(false);
         menuAccesibilidad.SetActive(false);
+        if (objeto != null) objeto.SetActive(false);
+        if (informe2 != null) informe2.SetActive(false);
     }
     public void Salir()
     {
-        Debug.Log("Salir...");
         Application.Quit();
     }
     public void Reiniciar()
@@ -98,7 +104,20 @@ public class MenuInicial : MonoBehaviour
         menuAccesibilidad.SetActive(true);
     }
 
-    public void vidaInfinita(){
+    public void vidaInfinita()
+    {
         healtplayer.noDamageModeActivated = !healtplayer.noDamageModeActivated;
+    }
+    public void Objeto()
+    {
+        juegoPause = true;
+        Time.timeScale = 0f;
+        objeto.SetActive(true);
+    }
+
+    public void siguienteInforme()
+    {
+        objeto.SetActive(false);
+        informe2.SetActive(true);
     }
 }
