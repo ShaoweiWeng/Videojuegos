@@ -7,7 +7,7 @@ public class LogicaObjeto : MonoBehaviour
 {
     private LogicaPlayer player;
     private ManagerAtaque espada;
-    private MenuInicial menu;
+    private LogicaHistoria historia;
     public int tipo;
 
     [SerializeField, TextArea(4, 6)] private string[] dialogueLines;
@@ -17,7 +17,7 @@ public class LogicaObjeto : MonoBehaviour
     private bool dialogueStart;
     private Coroutine m_MyCoroutineReference;
 
-    [SerializeField] private GameObject objeto;
+    [SerializeField] private GameObject menu;
 
     public GameObject botonF;
 
@@ -25,7 +25,7 @@ public class LogicaObjeto : MonoBehaviour
     {
         player = GameObject.FindGameObjectWithTag("Player").GetComponent<LogicaPlayer>();
         espada = GameObject.FindGameObjectWithTag("Player").GetComponent<ManagerAtaque>();
-        menu = objeto.GetComponent<MenuInicial>();
+        historia = menu.GetComponent<LogicaHistoria>();
     }
     public void Efecto()
     {
@@ -44,8 +44,7 @@ public class LogicaObjeto : MonoBehaviour
                 player.llavesBoss += 1;
                 break;
             case 5:
-                menu.Objeto();
-                menu.juegoPause = true;
+                historia.activarCanva();
                 break;
             case 6:
                 if (!dialogueStart)

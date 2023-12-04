@@ -14,12 +14,9 @@ public class MenuInicial : MonoBehaviour
     [SerializeField] private GameObject menuOpciones;
     [SerializeField] private GameObject menuAccesibilidad;
 
-    [SerializeField] private GameObject objeto;
-    [SerializeField] private GameObject informe2;
-
     private HealthPlayer healtplayer;
 
-    public bool juegoPause = false;
+    private bool juegoPause = false;
 
 
     private void Start()
@@ -33,9 +30,6 @@ public class MenuInicial : MonoBehaviour
     {
         menuinicial.SetActive(true);
     }
-
-
-
 
     public void jugar()
     {
@@ -74,8 +68,6 @@ public class MenuInicial : MonoBehaviour
         menuPausa.SetActive(false);
         menuOpciones.SetActive(false);
         menuAccesibilidad.SetActive(false);
-        if (objeto != null) objeto.SetActive(false);
-        if (informe2 != null) informe2.SetActive(false);
     }
     public void Salir()
     {
@@ -108,16 +100,5 @@ public class MenuInicial : MonoBehaviour
     {
         healtplayer.noDamageModeActivated = !healtplayer.noDamageModeActivated;
     }
-    public void Objeto()
-    {
-        juegoPause = true;
-        Time.timeScale = 0f;
-        objeto.SetActive(true);
-    }
 
-    public void siguienteInforme()
-    {
-        objeto.SetActive(false);
-        informe2.SetActive(true);
-    }
 }
