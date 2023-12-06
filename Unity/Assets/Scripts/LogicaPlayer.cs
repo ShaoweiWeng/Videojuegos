@@ -35,6 +35,12 @@ public class LogicaPlayer : MonoBehaviour
     private bool onObject = false;
     private Collider2D other;
 
+    //-.-VARIABLES ANIMACION-.-
+    [Header("Animacion")]
+    private Animator animator;
+
+
+
 
     public bool enKnockb = false;   //true si el personaje está en knockback porque ha tocado un enemigo
 
@@ -50,6 +56,8 @@ public class LogicaPlayer : MonoBehaviour
         isFacingLeft = false; // Suponiendo que siempre se va a spawnear mirando hacia la derecha
 
         facingLeft = new Vector2(-transform.localScale.x, transform.localScale.y);
+
+        animator = GetComponent < Animator>(); //Para la animacion
     }
 
     // Update is called once per frame
@@ -99,11 +107,17 @@ public class LogicaPlayer : MonoBehaviour
                 Destroy(other.gameObject);
             }
         }
+
+
+        animator.SetFloat("Horizontal", Mathf.Abs(xAxis));
+
+
     }
 
     void FixedUpdate()
     {
         rb.velocity = Vector2.ClampMagnitude(rb.velocity, maxVelocity); // Tope de velocidad
+        animator.SetBool("enSuelo",isGrounded());
     }
 
     private void OnDestroy()
@@ -140,6 +154,10 @@ public class LogicaPlayer : MonoBehaviour
         {
             return false;
         }
+
+        
+
+
     }
 
     public void Jump()
