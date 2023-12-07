@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.44657826, g: 0.49641263, b: 0.57481676, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657844, g: 0.49641222, b: 0.57481676, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -125950,6 +125950,39 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bf69821a8f6c949bb994c97599a4f5fc, type: 3}
+--- !u!114 &178744912 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7318576057946893668, guid: bf69821a8f6c949bb994c97599a4f5fc, type: 3}
+  m_PrefabInstance: {fileID: 178744911}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 67db9e8f0e2ae9c40bc1e2b64352a6b4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &178744913 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3301178403137887924, guid: bf69821a8f6c949bb994c97599a4f5fc, type: 3}
+  m_PrefabInstance: {fileID: 178744911}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 67db9e8f0e2ae9c40bc1e2b64352a6b4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &178744914 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 536116813520335559, guid: bf69821a8f6c949bb994c97599a4f5fc, type: 3}
+  m_PrefabInstance: {fileID: 178744911}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 67db9e8f0e2ae9c40bc1e2b64352a6b4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &185018162
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -127212,6 +127245,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   audioMixer: {fileID: 24100000, guid: 7757eef5a9c93b84c982e24887f9ccb1, type: 2}
+  barraMaster: {fileID: 178744914}
+  barraMusic: {fileID: 178744913}
+  barraEffect: {fileID: 178744912}
 --- !u!4 &765051655
 Transform:
   m_ObjectHideFlags: 0
