@@ -150,6 +150,10 @@ MonoBehaviour:
   vidaTotal: 100
   vidaActual: 0
   daKnockbackUp: 1
+  "clipsDa\xF1o":
+  - {fileID: 8300000, guid: e3a90b1f319630442a61c40c5445bae3, type: 3}
+  - {fileID: 8300000, guid: 34cca8c47b31743419465f0e60e76dbd, type: 3}
+  - {fileID: 8300000, guid: 84a6c09003c97694eba8676b5427f6ee, type: 3}
 --- !u!50 &4616625734706025747
 Rigidbody2D:
   serializedVersion: 4

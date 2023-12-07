@@ -19,6 +19,9 @@ public class VidaEnemigo : MonoBehaviour
     Color oldColor;
     Color colorGolpe;
 
+    //-.-.-ATRIBUTOS - SONIDO-.-.-
+    [SerializeField] private AudioClip[] clipsDaño;
+
     void Start()
     {
         vidaActual = vidaTotal;
@@ -34,6 +37,7 @@ public class VidaEnemigo : MonoBehaviour
         {
             yaGolpeado = true;
             vidaActual = vidaActual - cantidad;
+            ManagerSoundFX.instance.PlaySFXRandom(clipsDaño, transform, 1f);
             if (vidaActual <= 0)
             {
                 //AÑADIR ANIMACIONES DE MUERTE
