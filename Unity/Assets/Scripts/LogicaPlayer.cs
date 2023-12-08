@@ -39,6 +39,10 @@ public class LogicaPlayer : MonoBehaviour
     [Header("Animacion")]
     private Animator animator;
 
+    //-.-.-ATRIBUTOS - SONIDO-.-.-
+    [SerializeField] private AudioClip[] clipsPasos;
+    private bool soundPlaying = false;
+
 
 
 
@@ -68,6 +72,11 @@ public class LogicaPlayer : MonoBehaviour
             GetInputs();
             Walk();
             Jump();
+
+            if( (Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.D)) && isGrounded() && !soundPlaying)
+            {
+                StartCoroutine(PasosSFX());
+            }
 
             // GIRAR PERSONAJE
             if (xAxis > 0 && isFacingLeft)
@@ -213,5 +222,13 @@ public class LogicaPlayer : MonoBehaviour
         dashObtenido = PlayerPrefs.GetInt("dash", 0) == 1;
         llaveObtenido = PlayerPrefs.GetInt("llave", 0) == 1;
         llavesBoss = PlayerPrefs.GetInt("llavesBoss", 0);
+    }
+
+    private IEnumerator PasosSFX()
+    {
+        soundPlaying = true;
+        ManagerSoundFX.instance.PlaySFXRandom(clipsPasos, transform, 1f);
+        yield return new WaitForSeconds(0.5f);
+        soundPlaying = false;
     }
 }
