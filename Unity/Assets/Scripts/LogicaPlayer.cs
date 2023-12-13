@@ -41,6 +41,7 @@ public class LogicaPlayer : MonoBehaviour
 
     //-.-.-ATRIBUTOS - SONIDO-.-.-
     [SerializeField] private AudioClip[] clipsPasos;
+    [SerializeField] private AudioClip clipSalto;
     private bool soundPlaying = false;
 
 
@@ -173,6 +174,7 @@ public class LogicaPlayer : MonoBehaviour
     {
         if (Input.GetButtonDown("Jump") && isGrounded())
         {
+            ManagerSoundFX.instance.PlaySFX(clipSalto, transform, 1f);
             rb.velocity = new Vector2(rb.velocity.x, jumpForce);
         }
 

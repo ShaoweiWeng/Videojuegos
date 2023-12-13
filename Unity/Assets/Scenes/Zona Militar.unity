@@ -130362,6 +130362,7 @@ MonoBehaviour:
   llaveObtenido: 0
   llavesBoss: 0
   clipsPasos: []
+  clipSalto: {fileID: 8300000, guid: c9f6638fc8522bc48b6eae3415391d0a, type: 3}
   enKnockb: 0
 --- !u!96 &1653061784
 TrailRenderer:

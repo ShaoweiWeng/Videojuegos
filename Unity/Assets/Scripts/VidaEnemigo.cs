@@ -21,6 +21,7 @@ public class VidaEnemigo : MonoBehaviour
 
     //-.-.-ATRIBUTOS - SONIDO-.-.-
     [SerializeField] private AudioClip[] clipsDaño;
+    [SerializeField] private AudioClip clipMuerte;
 
     void Start()
     {
@@ -37,13 +38,14 @@ public class VidaEnemigo : MonoBehaviour
         {
             yaGolpeado = true;
             vidaActual = vidaActual - cantidad;
-            ManagerSoundFX.instance.PlaySFXRandom(clipsDaño, transform, 1f);
             if (vidaActual <= 0)
             {
                 //AÑADIR ANIMACIONES DE MUERTE
+                ManagerSoundFX.instance.PlaySFX(clipMuerte, transform, 1f);
                 gameObject.SetActive(false);
             }
             else{
+                ManagerSoundFX.instance.PlaySFXRandom(clipsDaño, transform, 1f);
                 StartCoroutine(terminaGolpe());
             }
         }
