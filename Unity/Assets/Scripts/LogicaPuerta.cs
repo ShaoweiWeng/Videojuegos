@@ -13,10 +13,14 @@ public class LogicaPuerta : MonoBehaviour
 
     private bool onKey = false;
     private bool onDoor = false;
+    private bool puertaAbierta = false;
     private Collider2D collision;
 
     public GameObject bloqueo;
     public GameObject bloqueo2;
+
+    //-.-.-ATRIBUTOS - SONIDO-.-.-
+    [SerializeField] private AudioClip clipPuerta;
 
 
     void Start()
@@ -38,6 +42,9 @@ public class LogicaPuerta : MonoBehaviour
         }
         if (player.llaveObtenido && onDoor && Input.GetButtonDown("Interactuar"))
         {
+            onDoor = false;
+            puertaAbierta = true;
+            ManagerSoundFX.instance.PlaySFX(clipPuerta, transform, 1f);
             animPuerta.SetTrigger("abrir");
             animPuertab.SetTrigger("abrir");
         }
@@ -53,7 +60,7 @@ public class LogicaPuerta : MonoBehaviour
 
         if (collision.CompareTag("door"))
         {
-            onDoor = true;
+            if (!puertaAbierta) onDoor = true;
             if (!player.llaveObtenido) { nokey.SetActive(true); }
             else
             {

@@ -17,6 +17,9 @@ public class ManagerAtaque : MonoBehaviour
     //-.-VARIABLES A GUARDAR-.-
     public bool espadaObtenido = false;
 
+    //-.-AUDIO-.-
+    [SerializeField] private AudioClip clipEspadazo;
+
     private void Awake()
     {
         loadData();
@@ -44,6 +47,10 @@ public class ManagerAtaque : MonoBehaviour
         if (espadaObtenido)
         {
             pulsadoAtaque = Input.GetButtonDown("Attack");
+
+             if (pulsadoAtaque){
+                ManagerSoundFX.instance.PlaySFX(clipEspadazo, transform, 1f);
+             }
 
             // ATAQUE ARRIBA
             if (pulsadoAtaque && Input.GetAxis("Vertical") > 0)
