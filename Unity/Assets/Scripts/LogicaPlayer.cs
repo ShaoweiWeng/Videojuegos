@@ -45,6 +45,9 @@ public class LogicaPlayer : MonoBehaviour
     [SerializeField] private AudioClip clipDash;
     private bool soundPlaying = false;
 
+    //-.-.-ATRIBUTOS - COYOTETIME-.-.-
+    private float coyoteTimeMax = 0.2f;
+    private float coyoteTimeActual;
 
 
 
@@ -69,6 +72,15 @@ public class LogicaPlayer : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        //--COYOTE TIME--
+        if(isGrounded()){
+            coyoteTimeActual = coyoteTimeMax;
+        }
+        else{
+            coyoteTimeActual = coyoteTimeActual - Time.deltaTime;
+        }
+
+
         if (!enKnockb)
         {
             GetInputs();
@@ -174,10 +186,11 @@ public class LogicaPlayer : MonoBehaviour
 
     public void Jump()
     {
-        if (Input.GetButtonDown("Jump") && isGrounded())
+        if (Input.GetButtonDown("Jump") && coyoteTimeActual > 0)
         {
             ManagerSoundFX.instance.PlaySFX(clipSalto, transform, 1f);
             rb.velocity = new Vector2(rb.velocity.x, jumpForce);
+            coyoteTimeActual = 0f;
         }
 
         //VARIABLE HEIGHT JUMP
