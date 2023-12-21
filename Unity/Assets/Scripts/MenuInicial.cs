@@ -43,9 +43,12 @@ public class MenuInicial : MonoBehaviour
 
     private IEnumerator LoadAsync()
     {
-       AsyncOperation asyncOperation = SceneManager.LoadSceneAsync(SceneManager.GetActiveScene().buildIndex + 1);
-        while (!asyncOperation.isDone) loadbar.value = asyncOperation.progress / 0.9f;
-        yield return null;
+        AsyncOperation asyncOperation = SceneManager.LoadSceneAsync(SceneManager.GetActiveScene().buildIndex + 1);
+        while (!asyncOperation.isDone)
+        {
+            loadbar.value = asyncOperation.progress / 0.9f;
+            yield return null;
+        }
     }
 
     private void Update()

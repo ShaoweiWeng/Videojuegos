@@ -128992,8 +128992,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5934ff50804bee9418b6cfb8008e07ff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  loadbar: {fileID: 0}
-  loadPanel: {fileID: 0}
+  loadbar: {fileID: 1583170648}
+  loadPanel: {fileID: 1583170649}
 --- !u!1 &503233723 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1508459293042165145, guid: fc011b67c0bab4cf2b59bb1b0fdfb1be, type: 3}

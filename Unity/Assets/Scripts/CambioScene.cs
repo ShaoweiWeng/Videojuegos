@@ -22,8 +22,12 @@ public class CambioScene : MonoBehaviour
         int sigScene = SceneManager.GetActiveScene().buildIndex;
         // Carga la siguiente escena en el orden de construcción
         AsyncOperation asyncOperation = SceneManager.LoadSceneAsync(sigScene + 1);
-        while (!asyncOperation.isDone) loadbar.value = asyncOperation.progress / 0.9f;
-        yield return null;
+        while (!asyncOperation.isDone)
+        {
+            loadbar.value = asyncOperation.progress / 0.9f;
+            yield return null;
+
+        }
     }
 }
 
