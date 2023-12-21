@@ -14,6 +14,7 @@ public class EnemyBehaviourLong : MonoBehaviour
     public Boolean alreadyShot = false;
     private Transform player;
     private float distanceFromPlayer;
+    [SerializeField] private AudioClip clipShoot;
 
     void Start()
     {
@@ -30,6 +31,7 @@ public class EnemyBehaviourLong : MonoBehaviour
         else if (distanceFromPlayer <= shootingRange && !alreadyShot)
         {
             alreadyShot = true;
+            ManagerSoundFX.instance.PlaySFX(clipShoot, transform, 1f);
             Instantiate(bullet, bulletParent.transform.position, Quaternion.identity);
             StartCoroutine(shootingReset());
         }

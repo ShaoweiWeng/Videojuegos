@@ -42,6 +42,7 @@ public class LogicaPlayer : MonoBehaviour
     //-.-.-ATRIBUTOS - SONIDO-.-.-
     [SerializeField] private AudioClip[] clipsPasos;
     [SerializeField] private AudioClip clipSalto;
+    [SerializeField] private AudioClip clipDash;
     private bool soundPlaying = false;
 
 
@@ -93,6 +94,7 @@ public class LogicaPlayer : MonoBehaviour
 
             if (dashObtenido && Input.GetButtonDown("Dash") && canDash)
             {
+                ManagerSoundFX.instance.PlaySFX(clipDash, transform, 1f);
                 isDashing = true;
                 canDash = false;
                 trailRenderer.emitting = true;

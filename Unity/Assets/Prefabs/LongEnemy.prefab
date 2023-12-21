@@ -107,6 +107,7 @@ MonoBehaviour:
   bulletParent: {fileID: 8079805056739351045}
   fireRate: 2
   alreadyShot: 0
+  clipShoot: {fileID: 8300000, guid: c5ff63c5293107d44ae46097d249dd8c, type: 3}
 --- !u!61 &3115849171411913139
 BoxCollider2D:
   m_ObjectHideFlags: 0

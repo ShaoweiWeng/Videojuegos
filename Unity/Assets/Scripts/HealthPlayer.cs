@@ -34,6 +34,10 @@ public class HealthPlayer : MonoBehaviour
     Color colorParpadeo;
     private Coroutine corutineParpadeo;
 
+    //-.-.-ATRIBUTOS - SONIDO-.-.-
+    [SerializeField] private AudioClip[] clipsDaño;
+    [SerializeField] private AudioClip clipMuerte;
+
     private void Awake()
     {
         loadData();
@@ -75,9 +79,11 @@ public class HealthPlayer : MonoBehaviour
 
                 //Destroy(gameObject);
                 //AÑADIR ANIMACIONES DE MUERTE + GAMEOVER ETC
+                ManagerSoundFX.instance.PlaySFX(clipMuerte, transform, 1f);
             }
             else
             {
+                ManagerSoundFX.instance.PlaySFXRandom(clipsDaño, transform, 1f);
                 StartCoroutine(invincibility());
             }
         }
