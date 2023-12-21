@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using System;
+using UnityEngine.UI;
+
 
 public class MenuInicial : MonoBehaviour
 {
@@ -13,6 +15,9 @@ public class MenuInicial : MonoBehaviour
 
     [SerializeField] private GameObject menuOpciones;
     [SerializeField] private GameObject menuAccesibilidad;
+
+    [SerializeField] private Slider loadbar;
+    [SerializeField] private GameObject loadPanel;
 
     private HealthPlayer healtplayer;
 
@@ -33,8 +38,14 @@ public class MenuInicial : MonoBehaviour
 
     public void jugar()
     {
+        StartCoroutine(LoadAsync());
+    }
 
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+    private IEnumerator LoadAsync()
+    {
+       AsyncOperation asyncOperation = SceneManager.LoadSceneAsync(SceneManager.GetActiveScene().buildIndex + 1);
+        while (!asyncOperation.isDone) loadbar.value = asyncOperation.progress / 0.9f;
+        yield return null;
     }
 
     private void Update()
