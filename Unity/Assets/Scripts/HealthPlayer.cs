@@ -21,7 +21,7 @@ public class HealthPlayer : MonoBehaviour
 
     //-.-.-ATRIBUTOS - KNOCKBACK-.-.-
     private Rigidbody2D rb;
-    private float force = 100;
+    private float force = 1000;
     [SerializeField] private float knockbackTime = .4f;
     private Vector2 direction;
 
@@ -142,13 +142,15 @@ public class HealthPlayer : MonoBehaviour
 
             if (GetComponent<LogicaPlayer>().isFacingLeft)
             {  //APLICAMOS KNOCKBACK DEPENDIENDO DE LA DIRECCIÓN
-                direction = new Vector2(4, 2);
-                rb.AddForce(direction * force);
+                Quaternion rotation = Quaternion.Euler( 0, 0, 335); //force diagonal derecha
+                direction = Vector2.up;
+                rb.AddForce(rotation * direction * force);
             }
             else
             {
-                direction = new Vector2(-4, 2);
-                rb.AddForce(direction * force);
+                Quaternion rotation = Quaternion.Euler( 0, 0, 25); //force diagonal izquierda
+                direction = Vector2.up;
+                rb.AddForce(rotation * direction * force);
             }
 
             takeDamagePlayer(1);
