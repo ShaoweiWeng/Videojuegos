@@ -38,6 +38,9 @@ public class HealthPlayer : MonoBehaviour
     [SerializeField] private AudioClip[] clipsDaño;
     [SerializeField] private AudioClip clipMuerte;
 
+
+    private LogicaPlayer player;
+
     private void Awake()
     {
         loadData();
@@ -47,6 +50,8 @@ public class HealthPlayer : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        player = GameObject.FindGameObjectWithTag("Player").GetComponent<LogicaPlayer>();
+
         currentHealth = maxHealth;
         createHealthBar();
         invencible = false;
@@ -138,9 +143,9 @@ public class HealthPlayer : MonoBehaviour
         if (other.gameObject.CompareTag("Enemy") && !invencible)
         {
 
-            GetComponent<LogicaPlayer>().enKnockb = true;
+            player.enKnockb = true;
 
-            if (GetComponent<LogicaPlayer>().isFacingLeft)
+            if (player.isFacingLeft)
             {  //APLICAMOS KNOCKBACK DEPENDIENDO DE LA DIRECCIÓN
                 Quaternion rotation = Quaternion.Euler( 0, 0, 335); //force diagonal derecha
                 direction = Vector2.up;
@@ -171,7 +176,7 @@ public class HealthPlayer : MonoBehaviour
     private IEnumerator knockback()
     {
         yield return new WaitForSeconds(knockbackTime);
-        GetComponent<LogicaPlayer>().enKnockb = false;
+        player.enKnockb = false;
     }
 
     private IEnumerator heal()
