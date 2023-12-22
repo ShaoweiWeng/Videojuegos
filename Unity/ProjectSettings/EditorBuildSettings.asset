@@ -9,7 +9,7 @@ EditorBuildSettings:
     path: Assets/Scenes/Inicio.unity
     guid: f1659f3b3bf87ed42af1260b85c77f46
   - enabled: 1
-    path: Assets/Scenes/SampleScene.unity
+    path: Assets/Scenes/Zona Ciudad.unity
     guid: 9fc0d4010bbf28b4594072e72b8655ab
   - enabled: 1
     path: Assets/Scenes/Zona Militar.unity
