@@ -60,6 +60,7 @@ public class LogicaPlayer : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        enKnockb = false;
         rb = GetComponent<Rigidbody2D>();
         trailRenderer = GetComponent<TrailRenderer>();
         isFacingLeft = false; // Suponiendo que siempre se va a spawnear mirando hacia la derecha
