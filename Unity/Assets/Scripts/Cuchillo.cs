@@ -15,11 +15,19 @@ public class Cuchillo : MonoBehaviour
     private bool hayKnockBack;  //Indica si el jugador esta afectado por el knockback en este momento o no
     private bool esAtaqueHaciaAbajo;
 
+    //ATRIBUTOS - COLOR
+    SpriteRenderer mySprite;
+    Color colorCuchillo;
+
     void Start()
     {
         player = GetComponentInParent<LogicaPlayer>();
         rb = GetComponentInParent<Rigidbody2D>();
         managerAtaque = GetComponentInParent<ManagerAtaque>();
+
+        mySprite = this.GetComponent<SpriteRenderer>();
+        colorCuchillo = new Color(0, 1, 1, 1);
+        mySprite.color = colorCuchillo;
     }
 
     void Update()
