@@ -40,9 +40,8 @@ public class LogicaPuerta : MonoBehaviour
             Destroy(bloqueo);
             Destroy(bloqueo2);
         }
-        if (player.llaveObtenido && onDoor && Input.GetButtonDown("Interactuar"))
+        if (player.llaveObtenido && onDoor && Input.GetButtonDown("Interactuar") && !puertaAbierta)
         {
-            onDoor = false;
             puertaAbierta = true;
             ManagerSoundFX.instance.PlaySFX(clipPuerta, transform, 1f);
             animPuerta.SetTrigger("abrir");
@@ -60,7 +59,7 @@ public class LogicaPuerta : MonoBehaviour
 
         if (collision.CompareTag("door"))
         {
-            if (!puertaAbierta) onDoor = true;
+            onDoor = true;
             if (!player.llaveObtenido) { nokey.SetActive(true); }
             else
             {
@@ -77,6 +76,7 @@ public class LogicaPuerta : MonoBehaviour
         }
         if (collision.CompareTag("door"))
         {
+            onDoor = false;
             if (!player.llaveObtenido) { nokey.SetActive(false); }
             else
             {
