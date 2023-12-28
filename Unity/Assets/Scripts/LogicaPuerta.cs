@@ -35,7 +35,6 @@ public class LogicaPuerta : MonoBehaviour
     {
         if (onKey && Input.GetButtonDown("Interactuar"))
         {
-            collision.GetComponent<LogicaObjeto>().Efecto();
             Destroy(collision.gameObject);
             Destroy(bloqueo);
             Destroy(bloqueo2);

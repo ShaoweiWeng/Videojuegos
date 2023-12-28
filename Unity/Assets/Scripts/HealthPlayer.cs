@@ -44,6 +44,9 @@ public class HealthPlayer : MonoBehaviour
     private void Awake()
     {
         loadData();
+    }
+    void Update()
+    {
         updateHealthBar();
     }
 
@@ -92,7 +95,6 @@ public class HealthPlayer : MonoBehaviour
                 StartCoroutine(invincibility());
             }
         }
-        updateHealthBar();
     }
 
     public void healDamagePlayer(int heal)
@@ -102,7 +104,6 @@ public class HealthPlayer : MonoBehaviour
         {
             currentHealth = maxHealth;
         }
-        updateHealthBar();
     }
 
     //Añade una barra de vida con tantos corazones como maxHealth
@@ -147,13 +148,13 @@ public class HealthPlayer : MonoBehaviour
 
             if (player.isFacingLeft)
             {  //APLICAMOS KNOCKBACK DEPENDIENDO DE LA DIRECCIÓN
-                Quaternion rotation = Quaternion.Euler( 0, 0, 335); //force diagonal derecha
+                Quaternion rotation = Quaternion.Euler(0, 0, 335); //force diagonal derecha
                 direction = Vector2.up;
                 rb.AddForce(rotation * direction * force);
             }
             else
             {
-                Quaternion rotation = Quaternion.Euler( 0, 0, 25); //force diagonal izquierda
+                Quaternion rotation = Quaternion.Euler(0, 0, 25); //force diagonal izquierda
                 direction = Vector2.up;
                 rb.AddForce(rotation * direction * force);
             }
