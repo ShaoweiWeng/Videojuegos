@@ -72,6 +72,5 @@ public class LogicaMonologo : MonoBehaviour
                 dialogueText.text = dialogueLines[lineIndex];
             }
         }
-
     }
 }

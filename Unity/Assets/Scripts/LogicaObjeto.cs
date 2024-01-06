@@ -61,7 +61,21 @@ public class LogicaObjeto : MonoBehaviour
                     dialogueText.text = dialogueLines[lineIndex];
                 }
                 break;
-
+            case 7:
+                if (!dialogueStart)
+                {
+                    StartDialogue();
+                }
+                else if (dialogueText.text == dialogueLines[lineIndex])
+                {
+                    nextLineFinal();
+                }
+                else
+                {
+                    StopCoroutine(m_MyCoroutineReference);
+                    dialogueText.text = dialogueLines[lineIndex];
+                }
+                break;
         }
     }
 
@@ -108,5 +122,18 @@ public class LogicaObjeto : MonoBehaviour
     private void OnTriggerExit2D(Collider2D other)
     {
         botonF.SetActive(false);
+    }
+    private void nextLineFinal()
+    {
+        lineIndex++;
+        if (lineIndex < dialogueLines.Length)
+        {
+            m_MyCoroutineReference = StartCoroutine(showLine());
+        }
+        else
+        {
+            Time.timeScale = 1f;
+            GameObject.FindGameObjectWithTag("Menu").GetComponent<MenuInicial>().jugar();
+        }
     }
 }
