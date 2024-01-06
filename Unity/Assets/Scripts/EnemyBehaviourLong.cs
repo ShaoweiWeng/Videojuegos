@@ -36,6 +36,16 @@ public class EnemyBehaviourLong : MonoBehaviour
             StartCoroutine(shootingReset());
         }
 
+        if((player.transform.position.x + 2 > transform.position.x) && (player.transform.position.x - 2 < transform.position.x)){ //Si el enemigo esta arriba del jugador
+                transform.localScale = new Vector2( Mathf.Abs(transform.localScale.x) * -1, transform.localScale.y ); //el enemigo mira hacia la der
+            }
+        else if(player.transform.position.x > transform.position.x){ //Si el enemigo esta a la izq del jugador
+                transform.localScale = new Vector2( Mathf.Abs(transform.localScale.x) * -1, transform.localScale.y ); //el enemigo mira hacia la der
+            }
+        else{
+            transform.localScale = new Vector2( Mathf.Abs(transform.localScale.x), transform.localScale.y ); //el enemigo mira hacia la izq
+        }
+
     }
 
     private IEnumerator shootingReset()
