@@ -38,6 +38,7 @@ public class MenuInicial : MonoBehaviour
 
     public void jugar()
     {
+        Time.timeScale = 1f;
         StartCoroutine(LoadAsync());
     }
 
