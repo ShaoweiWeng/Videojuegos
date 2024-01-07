@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657874, g: 0.49641258, b: 0.5748172, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -879,8 +879,9 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Team Lead \nedda blanco pavon\n\nPrograming\n shaowei \nmaria mu\xF1oz\n\nGame
-    Desing\n Maria canton\n\nTester \nmarcos morales\n"
+  m_text: "Team Lead \nedda rosa blanco pav\xF3n \n\nPrograming\nshaowei weng\nmar\xEDa
+    mu\xF1oz nieto \n\nGame Desing\nMar\xEDa cant\xF3n gonz\xE1lez\n\nTester \nmarcos
+    morales garc\xEDa\n"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 87d8fecdbc1f37b45bef9e1ed3b10120, type: 2}
   m_sharedMaterial: {fileID: 8595014296656538576, guid: 87d8fecdbc1f37b45bef9e1ed3b10120, type: 2}
