@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657844, g: 0.49641222, b: 0.57481676, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -52390,7 +52390,23 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1822875322158255820, guid: bf69821a8f6c949bb994c97599a4f5fc, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -2.296936
+      value: -109
+      objectReference: {fileID: 0}
+    - target: {fileID: 2743553115653742763, guid: bf69821a8f6c949bb994c97599a4f5fc, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2743553115653742763, guid: bf69821a8f6c949bb994c97599a4f5fc, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: -59.7658
+      objectReference: {fileID: 0}
+    - target: {fileID: 2743553115653742763, guid: bf69821a8f6c949bb994c97599a4f5fc, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2743553115653742763, guid: bf69821a8f6c949bb994c97599a4f5fc, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 1.1633911
       objectReference: {fileID: 0}
     - target: {fileID: 2848657869443242574, guid: bf69821a8f6c949bb994c97599a4f5fc, type: 3}
       propertyPath: m_Name
@@ -54326,7 +54342,7 @@ MonoBehaviour:
   - "\xBFQu\xE9 habr\xE1 pasado aqu\xED? \xBFPor qu\xE9 estar\xE1 muerto?..."
   dialoguePanel: {fileID: 1150777054}
   dialogueText: {fileID: 1689904477}
-  menu: {fileID: 0}
+  menu: {fileID: 2037110445}
   botonF: {fileID: 1961374262}
 --- !u!1 &644286489
 GameObject:
@@ -99871,6 +99887,11 @@ MonoBehaviour:
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1508459293042165145, guid: fc011b67c0bab4cf2b59bb1b0fdfb1be, type: 3}
   m_PrefabInstance: {fileID: 818026899}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &2037110445 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8760807732156557002, guid: bf69821a8f6c949bb994c97599a4f5fc, type: 3}
+  m_PrefabInstance: {fileID: 178744911}
   m_PrefabAsset: {fileID: 0}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
