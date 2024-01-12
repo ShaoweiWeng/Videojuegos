@@ -23,12 +23,15 @@ public class MenuInicial : MonoBehaviour
 
     private bool juegoPause = false;
 
+    private LogicaPlayer player; //ARREGLO 4 LLAVES
+
 
     private void Start()
     {
 
         healtplayer = GameObject.FindGameObjectWithTag("Player").GetComponent<HealthPlayer>();
         healtplayer.MuerteJugador += ActivarMenu;
+        player = GameObject.FindGameObjectWithTag("Player").GetComponent<LogicaPlayer>(); //ARREGLO 4 LLAVES
 
     }
     private void ActivarMenu(object sender, EventArgs e)
@@ -92,6 +95,7 @@ public class MenuInicial : MonoBehaviour
     {
         int actual = SceneManager.GetActiveScene().buildIndex;
         SceneManager.LoadScene(actual);
+        player.llavesBoss = 0; //ARREGLO 4 LLAVES
 
     }
     public void MenuPrincipal()
